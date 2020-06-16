@@ -1,6 +1,6 @@
 #!/bin/bash
 cp Makefile_tx2 ~/Makefile
-mv yolov3-tiny-prn.weights ~/yolov3-tiny-prn.weights
+cp yolov3-tiny-prn.weights ~/yolov3-tiny-prn.weights
 cd
 git clone https://github.com/AlexeyAB/darknet.git
 cd darknet
