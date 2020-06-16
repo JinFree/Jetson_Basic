@@ -11,8 +11,8 @@ gstreamer1.0-tools gstreamer1.0-alsa \
  libgstreamer-plugins-base1.0-dev \
  libgstreamer-plugins-good1.0-dev \
  libgstreamer-plugins-bad1.0-dev \
- cmake libgflags-dev v4l-utils pyqt5-dev-tools\
- libjpeg-dev libgflags-dev libtiff5-dev libpng-dev libavcodec-dev libavformat-dev \
+ cmake libgflags-dev pyqt5-dev-tools\
+ libjpeg-dev libtiff5-dev libpng-dev libavcodec-dev libavformat-dev \
  libswscale-dev libxvidcore-dev libx264-dev libxine2-dev \
  libv4l-dev ffmpeg v4l-utils gstreamer1.0-tools gstreamer1.0-alsa \
  gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
