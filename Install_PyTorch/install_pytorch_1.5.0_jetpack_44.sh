@@ -1,5 +1,8 @@
 #!/bin/bash
 cd 
+python3 -m venv .venv_pytorch_15
+echo "alias PYTORCH='source ~/.venv_pytorch_15/bin/activate'" >> ~/.bashrc
+source ~/.venv_pytorch_15/bin/activate
 wget https://nvidia.box.com/shared/static/3ibazbiwtkl181n95n9em3wtrca7tdzp.whl -O torch-1.5.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install python3-pip libopenblas-base libopenmpi-dev -y
 pip3 install Cython
