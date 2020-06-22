@@ -8,7 +8,8 @@ gstreamer1.0-tools gstreamer1.0-alsa \
  gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
  gstreamer1.0-libav \
  libgstreamer1.0-dev \
- libgstreamer-plugins-base1.0-dev \
+ libopenblas-base libopenmpi-dev \
+ libgstreamer-plugins-base1.0-dev zlib1g-dev \
  libgstreamer-plugins-good1.0-dev \
  libgstreamer-plugins-bad1.0-dev \
  cmake libgflags-dev pyqt5-dev-tools\
