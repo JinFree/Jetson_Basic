@@ -1,10 +1,12 @@
 #jetson tx2 onboard camera gstreamer string
 #gst_str = ("nvarguscamerasrc ! video/x-raw(memory:NVMM), width=(int)1280, height=(int)720, format=(string)NV12, framerate=(fraction)60/1 ! nvvidconv flip-method=0 ! video/x-raw, width=(int)1280, height=(int)720, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink")
+#gst_str = ("v4l2src device=/dev/video1 ! video/x-raw, width=640, height=360, format=(string)YUY2,framerate=30/1 ! videoconvert ! video/x-raw,width=640,height=360,format=BGR ! appsink")
 
 import cv2
 import numpy as np
 def imageProcessing(input):
     output = np.copy(input)
+    output = cv2.cvtColor(input, cv2.COLOR_BGR2GRAY)
     return output
 
 def Video(openpath, savepath = None):
