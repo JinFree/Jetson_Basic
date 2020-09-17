@@ -1,10 +1,10 @@
 #!/bin/bash
-cp Makefile_tx2 ~/Makefile
-cp yolov3-tiny-prn.weights ~/yolov3-tiny-prn.weights
-cp yolov3-tiny.weights ~/yolov3-tiny.weights
-cp yolov4-tiny.weights ~/yolov4-tiny.weights
-cd
-git clone https://github.com/AlexeyAB/darknet.git
+cp ../Data/Makefile_xavier ~/Makefile
+cp ../Data/yolov3-tiny-prn.weights ~/yolov3-tiny-prn.weights
+cp ../Data/yolov3-tiny.weights ~/yolov3-tiny.weights
+cp ../Data/yolov4-tiny.weights ~/yolov4-tiny.weights
+cd 
+git clone https://github.com/JinFree/darknet.git
 cd darknet
 mv ../Makefile .
 make -j $(nproc)
