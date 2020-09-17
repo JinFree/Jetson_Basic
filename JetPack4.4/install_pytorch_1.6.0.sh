@@ -13,3 +13,4 @@ git clone --branch v0.6.0 https://github.com/pytorch/vision torchvision
 cd torchvision
 sudo python3 setup.py install
 cd ../  # attempting to load torchvision from build dir will result in import error
+sudo rm -rf torchvision
