@@ -8,7 +8,7 @@ pip3 install torch-1.6.0rc2-cp36-cp36m-linux_aarch64.whl
 rm torch-1.6.0rc2-cp36-cp36m-linux_aarch64.whl
 
 
-sudo apt-get install libjpeg-dev zlib1g-dev
+sudo apt-get install libjpeg-dev zlib1g-dev -y
 git clone --branch v0.6.0 https://github.com/pytorch/vision torchvision
 cd torchvision
 sudo python3 setup.py install
