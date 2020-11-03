@@ -51,4 +51,6 @@ def Video(openpath, savepath = None):
         out.release()
     cv2.destroyAllWindows()
     return
-Video(gst_str)
+   
+if __name__=="__main__":
+    Video(gst_str)
