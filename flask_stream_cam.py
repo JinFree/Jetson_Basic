@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from flask import Flask, Response
+from flask import Flask, Response, make_response
 
 
 gst_str = ("nvarguscamerasrc ! video/x-raw(memory:NVMM), width=(int)1280, height=(int)720, format=(string)NV12, framerate=(fraction)60/1 ! nvvidconv flip-method=0 ! video/x-raw, width=(int)1280, height=(int)720, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink")
@@ -25,6 +25,14 @@ def video_feed():
     global video
     return Response(gen(video),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
+
+@app.route('/frame_feed', methods=['POST'])
+def frame_feed():
+    global video
+    _, image = video.read()
+    _, imgencoded = cv2.imencode('.jpg', image)
+    return make_response(imgencoded.tobytes())
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, threaded=True)
