@@ -2,10 +2,11 @@
 cd 
 wget https://nvidia.box.com/shared/static/cs3xn3td6sfgtene6jdvsxlr366m2dhq.whl -O torch-1.7.0-cp36-cp36m-linux_aarch64.whl
 sudo apt-get install python3-pip libopenblas-base libopenmpi-dev
-pip3 install Cython 
-pip3 install wheel
-pip3 install numpy
-pip3 install torch-1.7.0-cp36-cp36m-linux_aarch64.whl
+
+python3 -m pip install Cython 
+python3 -m pip install wheel
+python3 -m pip install numpy
+python3 -m pip install torch-1.7.0-cp36-cp36m-linux_aarch64.whl
 rm torch-1.7.0-cp36-cp36m-linux_aarch64.whl
 
 
