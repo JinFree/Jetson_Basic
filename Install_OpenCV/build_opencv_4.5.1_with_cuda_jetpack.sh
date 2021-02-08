@@ -20,13 +20,13 @@ fi
 cleanup () {
 # https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
     while true ; do
-        echo "Do you wish to remove temporary build files in /tmp/build_opencv ? "
+        echo "Do you wish to remove temporary build files in ~/.tmp/build_opencv ? "
         if ! [[ "$1" -eq "--test-warning" ]] ; then
             echo "(Doing so may make running tests on the build later impossible)"
         fi
         read -p "Y/N " yn
         case ${yn} in
-            [Yy]* ) rm -rf /tmp/build_opencv ; break;;
+            [Yy]* ) rm -rf ~/.tmp/build_opencv ; break;;
             [Nn]* ) exit ;;
             * ) echo "Please answer yes or no." ;;
         esac
@@ -34,9 +34,11 @@ cleanup () {
 }
 
 setup () {
-    cd /tmp
+    cd ~
+    mkdir .tmp
+    cd ~/.tmp
     if [[ -d "build_opencv" ]] ; then
-        echo "It appears an existing build exists in /tmp/build_opencv"
+        echo "It appears an existing build exists in ~/.tmp/build_opencv"
         cleanup
     fi
     mkdir build_opencv
@@ -116,7 +118,7 @@ configure () {
         -D ENABLE_NEON=ON
         -D OPENCV_DNN_CUDA=ON
         -D OPENCV_ENABLE_NONFREE=ON
-        -D OPENCV_EXTRA_MODULES_PATH=/tmp/build_opencv/opencv_contrib/modules
+        -D OPENCV_EXTRA_MODULES_PATH=~/.tmp/build_opencv/opencv_contrib/modules
         -D OPENCV_GENERATE_PKGCONFIG=ON
         -D WITH_CUBLAS=ON
         -D WITH_CUDA=ON
