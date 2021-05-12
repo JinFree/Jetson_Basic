@@ -21,10 +21,9 @@ def Video(openpath, savepath = None):
     fps = cap.get(cv2.CAP_PROP_FPS)
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-    fourcc = int(cap.get(cv2.CAP_PROP_FOURCC))
-    #fourcc = cv2.VideoWriter_fourcc('m','p','4','v') with *.mp4 save
     out = None
     if savepath is not None:
+        fourcc = cv2.VideoWriter_fourcc(*'XVID') #.avi
         out = cv2.VideoWriter(savepath, fourcc, fps, (width, height), True)
     cv2.namedWindow("Input", cv2.WINDOW_GUI_EXPANDED)
     cv2.namedWindow("Output", cv2.WINDOW_GUI_EXPANDED)
