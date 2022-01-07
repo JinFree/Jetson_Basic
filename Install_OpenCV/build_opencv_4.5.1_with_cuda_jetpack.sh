@@ -57,6 +57,7 @@ install_dependencies () {
         cmake \
         git \
         gfortran \
+        qtbase5-dev \
         libatlas-base-dev \
         libavcodec-dev \
         libavformat-dev \
