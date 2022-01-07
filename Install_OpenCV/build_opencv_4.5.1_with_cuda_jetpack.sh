@@ -68,6 +68,24 @@ install_dependencies () {
         libgstreamer-plugins-base1.0-dev \
         libgstreamer-plugins-good1.0-dev \
         libgstreamer1.0-dev \
+	gstreamer1.0-tools gstreamer1.0-alsa \
+	gstreamer1.0-plugins-base gstreamer1.0-plugins-good \
+	gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly \
+	gstreamer1.0-libav \
+	libgstreamer1.0-dev \
+	libopenblas-base libopenmpi-dev \
+	libgstreamer-plugins-base1.0-dev zlib1g-dev \
+	libgstreamer-plugins-good1.0-dev \
+	libgstreamer-plugins-bad1.0-dev \
+	cmake libgflags-dev pyqt5-dev-tools\
+	libjpeg-dev libtiff5-dev libpng-dev libavcodec-dev libavformat-dev \
+	libswscale-dev libxvidcore-dev libx264-dev libxine2-dev \
+	libv4l-dev ffmpeg v4l-utils gstreamer1.0-tools gstreamer1.0-alsa \
+	gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad \
+	gstreamer1.0-plugins-ugly gstreamer1.0-libav libgstreamer1.0-dev \
+	libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev \
+	libgstreamer-plugins-bad1.0-dev libqt4-dev mesa-utils libgl1-mesa-dri \
+	libqt4-opengl-dev libatlas-base-dev gfortran libeigen3-dev \
         libgtk-3-dev \
         libjpeg-dev \
         libjpeg8-dev \
@@ -120,7 +138,9 @@ configure () {
         -D WITH_CUDNN=ON
         -D WITH_GSTREAMER=ON
         -D WITH_LIBV4L=ON
-        -D WITH_OPENGL=ON"
+        -D WITH_OPENGL=ON
+	-D WITH_QT=ON
+	-D WITH_FFMPEG=ON"
 
     if [[ "$1" != "test" ]] ; then
         CMAKEFLAGS="
