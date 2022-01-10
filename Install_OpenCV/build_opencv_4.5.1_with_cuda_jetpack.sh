@@ -8,9 +8,16 @@ readonly PREFIX=/usr/local  # install prefix, (can be ~/.local for a user instal
 readonly DEFAULT_VERSION=4.5.1  # controls the default version (gets reset by the first argument)
 readonly CPUS=$(nproc)  # controls the number of jobs
 
+
 # better board detection. if it has 6 or more cpus, it probably has a ton of ram too
-# something with a ton of ram
-JOBS=$CPUS
+if [[ $CPUS -gt 5 ]]; then
+    # something with a ton of ram
+    JOBS=$CPUS
+else
+    JOBS=1  # you can set this to 4 if you have a swap file
+    # otherwise a Nano will choke towards the end of the build
+fi
+
 
 cleanup () {
 # https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
@@ -178,7 +185,6 @@ main () {
 
     if [[ ${DO_TEST} ]] ; then
         configure test
-    else
         configure
     fi
 
