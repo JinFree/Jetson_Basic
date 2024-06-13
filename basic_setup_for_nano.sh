@@ -21,8 +21,10 @@ gstreamer1.0-tools gstreamer1.0-alsa \
  libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev \
  libgstreamer-plugins-bad1.0-dev libqt4-dev mesa-utils libgl1-mesa-dri \
  libqt4-opengl-dev libatlas-base-dev gfortran libeigen3-dev python2.7-dev \
- python3-dev python-numpy python3-numpy python-pip python3-pip python3-matplotlib
+ python3-dev python-numpy python3-numpy python-pip python3-pip python3-matplotlib tmux
 sudo apt install python-dev python3-dev python-pip python3-pip python-numpy python3-numpy python3-venv -y
 echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:/usr/local/cuda/lib64" >> ~/.bashrc
 echo "export PATH=\$PATH:/usr/local/cuda/bin" >> ~/.bashrc
+echo "set -g mouse on" >> ~/.tmux.conf
 sudo -H pip install -U jetson-stats
+sudo reboot
